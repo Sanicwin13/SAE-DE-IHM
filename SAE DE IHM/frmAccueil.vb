@@ -45,6 +45,8 @@ Public Class frmAccueil
     End Sub
     Private Sub frmAccueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ActualiserComboBox()
+        Me.BackgroundImage = Image.FromFile("images/Poop-emoji-scaled.jpg")
+        Me.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged

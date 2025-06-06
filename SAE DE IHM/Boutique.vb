@@ -15,7 +15,8 @@ Public Class Boutique
         If joueur.Tout.NomJ IsNot Nothing Then
             joueurSelectionne = joueur.Tout.NomJ
             Label2.Text = joueur.Tout.Monnaie.ToString()
-            Label4.Text = joueur.Tout.ptsFlow.ToString()
+            Label2.Visible = True
+            PictureBox2.Visible = True
         Else
             MsgBox("Ce joueur n'existe pas")
         End If
@@ -47,5 +48,9 @@ Public Class Boutique
     End Sub
     Private Sub MajBoutique(nomL As Label, Joueur As StatJoueur)
         nomL.Text = Joueur.Tout.Monnaie.ToString()
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
     End Sub
 End Class
