@@ -85,6 +85,7 @@
     <Compile Include="ChoixDiffi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Cosmétique.vb" />
     <Compile Include="FonctionUtile.vb" />
     <Compile Include="frmScores.Designer.vb">
       <DependentUpon>frmScores.vb</DependentUpon>

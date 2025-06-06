@@ -1,4 +1,6 @@
-﻿Imports System.Reflection
+﻿Imports System.Drawing.Imaging
+Imports System.Reflection
+Imports System.Windows.Forms.VisualStyles
 
 Public Class Boutique
     Private joueursList As List(Of JoueurStat.StatJoueur)
@@ -7,6 +9,8 @@ Public Class Boutique
     Private Sub Boutique_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RemplirComboBox(ComboBox1)
         joueursList = Recup
+        Me.BackgroundImage = Image.FromFile("images/TestShop.png")
+        Me.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

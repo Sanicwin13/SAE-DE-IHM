@@ -99,9 +99,6 @@ Public Module JoueurStat
     End Sub
     Sub main()
         Application.Run(frmAccueil)
-        'Application.Run(frmJeu)
-
-        'Application.Exit()
     End Sub
 
     Public ReadOnly Property Recup() As List(Of StatJoueur)
