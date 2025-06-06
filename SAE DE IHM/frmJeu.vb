@@ -13,9 +13,16 @@ Public Class frmJeu
     Private joueursList As List(Of JoueurStat.StatJoueur)
     Private Sub btnAbandonner_Click(sender As Object, e As EventArgs) Handles btnAbandonner.Click
         If MsgBox("Veux-tu abandonner ? ", vbYesNo) = vbYes Then
-            MAJStat(frmAccueil.ComboBox1.Text, carreTrv, 60 - secondeLeft, TempsDernCarreTrv)
             Me.Close()
             timer.Stop()
+            If ModeHard Then
+                For i = 1 To 2
+                    MAJStat(frmAccueil.ComboBox1.Text, carreTrv, 30 - secondeLeft, TempsDernCarreTrv)
+                Next
+            Else
+                MAJStat(frmAccueil.ComboBox1.Text, carreTrv, 60 - secondeLeft, TempsDernCarreTrv)
+            End If
+            ModeHard = False
             frmAccueil.ActualiserComboBox()
             frmAccueil.Show()
         Else
@@ -73,6 +80,9 @@ Public Class frmJeu
             cartes(i).Tag = faces(i) ' on garde le chemin de la face cachée
             AddHandler cartes(i).Click, AddressOf Carte_Click
         Next
+        If ModeHard = True Then
+            secondeLeft = 30
+        End If
     End Sub
 
 
@@ -84,7 +94,13 @@ Public Class frmJeu
             lblTemps.Text = "Fin"
             timer.Stop()
             clicsBloques = True
-            MAJStat(frmAccueil.ComboBox1.Text, carreTrv, 60 - secondeLeft, TempsDernCarreTrv)
+            If ModeHard Then
+                For i = 1 To 2
+                    MAJStat(frmAccueil.ComboBox1.Text, carreTrv, 30 - secondeLeft, TempsDernCarreTrv)
+                Next
+            Else
+                MAJStat(frmAccueil.ComboBox1.Text, carreTrv, 60 - secondeLeft, TempsDernCarreTrv)
+            End If
             joueursList = JoueurStat.Recup()
             Dim nomJoueur As String = frmAccueil.ComboBox1.Text
             Dim stats = joueursList.Find(Function(j) j.Tout.NomJ.Equals(nomJoueur, StringComparison.OrdinalIgnoreCase))
@@ -131,6 +147,9 @@ Public Class frmJeu
                 carte.BackColor = Color.Gray
             Next
             carreTrv += 1
+            If ModeHard Then
+                TempsDernCarreTrv = 30 - secondeLeft
+            End If
             TempsDernCarreTrv = 60 - secondeLeft
             cartesRetournees.Clear()
         End If

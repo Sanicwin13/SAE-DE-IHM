@@ -61,6 +61,9 @@ Public Module JoueurStat
         tempsTotal += tempsPartie
         Monnaie += carreTrv * 30
         If carreTrv = 5 Then
+            If ModeHard Then
+                Monnaie += (30 - TempsDernCarreTrv) * 2
+            End If
             Monnaie += (60 - TempsDernCarreTrv) * 2
         End If
 

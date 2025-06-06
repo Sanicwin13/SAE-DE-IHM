@@ -7,4 +7,5 @@ Module FonctionUtile
             cmb.Items.Add(j.Tout.NomJ)
         Next
     End Sub
+    Public ModeHard As Boolean = False
 End Module
