@@ -9,13 +9,13 @@ Public Class Boutique
     Private Sub Boutique_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RemplirComboBox(ComboBox1)
         joueursList = Recup
-        Me.BackgroundImage = Image.FromFile("images/TestShop.png")
+        Me.BackgroundImage = Image.FromFile("Resources/images/TestShop.png")
         Me.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim Joueurrecherche As String = ComboBox1.Text.Trim()
-        Dim joueur = joueursList.Find(Function(j) j.Tout.NomJ.Equals(Joueurrecherche, StringComparison.OrdinalIgnoreCase))
+        Dim joueur As StatJoueur = joueursList.Find(Function(j) j.Tout.NomJ.Equals(Joueurrecherche, StringComparison.OrdinalIgnoreCase))
         If joueur.Tout.NomJ IsNot Nothing Then
             joueurSelectionne = joueur.Tout.NomJ
             Label2.Text = joueur.Tout.Monnaie.ToString()
@@ -29,7 +29,7 @@ Public Class Boutique
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If joueurSelectionne IsNot Nothing Then
             joueursList = JoueurStat.Recup.ToList()
-            Dim joueur = joueursList.Find(Function(j) j.Tout.NomJ.Equals(joueurSelectionne, StringComparison.OrdinalIgnoreCase))
+            Dim joueur As StatJoueur = joueursList.Find(Function(j) j.Tout.NomJ.Equals(joueurSelectionne, StringComparison.OrdinalIgnoreCase))
             If joueur.Tout.Hard = False Then
                 JoueurStat.MAJMonnaie(joueurSelectionne, 1)
                 MajHard(joueur.Tout.NomJ)

@@ -19,8 +19,8 @@ Public Class frmAccueil
             MsgBox("Tu n'as pas assez de lettres")
         Else
             joueursList = Recup()
-            Dim joueur = ComboBox1.Text
-            Dim stats = joueursList.Find(Function(j) j.Tout.NomJ.Equals(joueur, StringComparison.OrdinalIgnoreCase))
+            Dim joueur As String = ComboBox1.Text
+            Dim stats As StatJoueur = joueursList.Find(Function(j) j.Tout.NomJ.Equals(joueur, StringComparison.OrdinalIgnoreCase))
             If stats.Tout.Hard = False Then
                 frmJeu.Show()
                 Me.Hide()

@@ -30,7 +30,7 @@ Public Class frmScores
         ListBox4.Items.Clear()
         ListBox5.Items.Clear()
 
-        For Each j In joueursList
+        For Each j As StatJoueur In joueursList
             ListBox1.Items.Add(j.Tout.NomJ)
             ListBox2.Items.Add(j.Tout.NbrMaxCarre)
             ListBox3.Items.Add(j.Tout.TempsMinTrv)
@@ -41,7 +41,7 @@ Public Class frmScores
 
     Private Sub ListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged, ListBox2.SelectedIndexChanged, ListBox3.SelectedIndexChanged
         Dim lb As ListBox = CType(sender, ListBox)
-        Dim index = lb.SelectedIndex
+        Dim index As Integer = lb.SelectedIndex
         If index < 0 Then Return
 
         RemoveHandler ListBox1.SelectedIndexChanged, AddressOf ListBox_SelectedIndexChanged
@@ -71,8 +71,8 @@ Public Class frmScores
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim nomRecherche = ComboBox1.Text.Trim()
-        Dim joueur = joueursList.Find(Function(j) j.Tout.NomJ.Equals(nomRecherche, StringComparison.OrdinalIgnoreCase))
+        Dim nomRecherche As String = ComboBox1.Text.Trim()
+        Dim joueur As StatJoueur = joueursList.Find(Function(j) j.Tout.NomJ.Equals(nomRecherche, StringComparison.OrdinalIgnoreCase))
         If joueur.Tout.NomJ IsNot Nothing Then
             MessageBox.Show($"Nom: {joueur.Tout.NomJ}" & vbCrLf &
                             $"Meilleur score: {joueur.Tout.NbrMaxCarre}" & vbCrLf &

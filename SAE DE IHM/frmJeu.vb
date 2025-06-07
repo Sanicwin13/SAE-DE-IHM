@@ -16,7 +16,7 @@ Public Class frmJeu
             Me.Close()
             timer.Stop()
             If ModeHard Then
-                For i = 1 To 2
+                For i As Integer = 1 To 2
                     MAJStat(frmAccueil.ComboBox1.Text, carreTrv, 30 - secondeLeft, TempsDernCarreTrv)
                 Next
             Else
@@ -74,7 +74,7 @@ Public Class frmJeu
         faces = faces.OrderBy(Function() rnd.Next()).ToList()
 
         ' Associer les images aux PictureBox
-        For i = 0 To 19
+        For i As Integer = 0 To 19
             cartes(i) = CType(Me.Controls("PictureBox" & (i + 1).ToString()), PictureBox)
             cartes(i).Image = Image.FromFile(dos)
             cartes(i).Tag = faces(i) ' on garde le chemin de la face cachée
@@ -95,7 +95,7 @@ Public Class frmJeu
             timer.Stop()
             clicsBloques = True
             If ModeHard Then
-                For i = 1 To 2
+                For i As Integer = 1 To 2
                     MAJStat(frmAccueil.ComboBox1.Text, carreTrv, 30 - secondeLeft, TempsDernCarreTrv)
                 Next
             Else
@@ -103,11 +103,11 @@ Public Class frmJeu
             End If
             joueursList = JoueurStat.Recup()
             Dim nomJoueur As String = frmAccueil.ComboBox1.Text
-            Dim stats = joueursList.Find(Function(j) j.Tout.NomJ.Equals(nomJoueur, StringComparison.OrdinalIgnoreCase))
+            Dim stats As StatJoueur = joueursList.Find(Function(j) j.Tout.NomJ.Equals(nomJoueur, StringComparison.OrdinalIgnoreCase))
             Dim message As String = "Nom : " & nomJoueur & vbCrLf &
                             "Carrés trouvés (max) : " & carreTrv & vbCrLf &
                             "Temps total de jeu : " & TempsDernCarreTrv & " secondes"
-            If MsgBox(message) Then
+            If MsgBox(message) = MsgBoxResult.Yes Then
                 frmAccueil.ActualiserComboBox()
                 frmAccueil.Show()
                 Me.Close()
@@ -135,14 +135,14 @@ Public Class frmJeu
         If Not toutesIdentiques Then
             clicsBloques = True
             Await Task.Delay(500)
-            For Each carte In cartesRetournees
+            For Each carte As PictureBox In cartesRetournees
                 carte.Image = Image.FromFile(dos)
             Next
             cartesRetournees.Clear()
             clicsBloques = False
         End If
         If cartesRetournees.Count = 4 Then
-            For Each carte In cartesRetournees
+            For Each carte As PictureBox In cartesRetournees
                 carte.Enabled = False
                 carte.BackColor = Color.Gray
             Next

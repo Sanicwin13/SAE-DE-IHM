@@ -91,7 +91,7 @@ Public Module JoueurStat
     Public Sub MajHard(nom As String)
         Dim stat As StatJoueur
         stat = Joueur(nom)
-        Dim Hard = stat.Tout.Hard
+        Dim Hard As Boolean = stat.Tout.Hard
         Hard = True
         stat = New StatJoueur(nom, stat.Tout.NbrMaxCarre, stat.Tout.TempsMinTrv, stat.Tout.NbrPartieJouer, stat.Tout.TempsTotal, stat.Tout.Monnaie, stat.Tout.ptsFlow, Hard)
         Joueur(nom) = stat
