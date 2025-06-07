@@ -7,10 +7,6 @@ Public Class frmAccueil
         If MsgBox("Veux tu quitter ? ", vbYesNo) = vbYes Then
 
             Me.Close()
-        Else
-
-
-
         End If
     End Sub
 
@@ -30,9 +26,6 @@ Public Class frmAccueil
             End If
         End If
     End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnOptions.Click
-
-    End Sub
 
     Private Sub btnScores_Click(sender As Object, e As EventArgs) Handles btnScores.Click
         frmScores.Show()
@@ -49,9 +42,8 @@ Public Class frmAccueil
         Me.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-    End Sub
     Public Sub ActualiserComboBox()
         RemplirComboBox(ComboBox1)
     End Sub
+
 End Class

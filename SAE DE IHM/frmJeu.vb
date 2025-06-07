@@ -25,9 +25,6 @@ Public Class frmJeu
             ModeHard = False
             frmAccueil.ActualiserComboBox()
             frmAccueil.Show()
-        Else
-
-
 
         End If
 
@@ -47,12 +44,6 @@ Public Class frmJeu
             timer.Stop()
         End If
     End Sub
-
-    Private Sub lblJoueur_Click(sender As Object, e As EventArgs) Handles lblNom.Click
-
-    End Sub
-
-
 
     Private Sub frmJeu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         carreTrv = 0
@@ -113,14 +104,6 @@ Public Class frmJeu
                 Me.Close()
             End If
         End If
-    End Sub
-
-    Private Sub lblTemps_Click_1(sender As Object, e As EventArgs) Handles lblTemps.Click
-
-    End Sub
-
-    Private Sub PictureBox20_Click(sender As Object, e As EventArgs) Handles PictureBox20.Click
-
     End Sub
 
     Private Async Sub Carte_Click(sender As Object, e As EventArgs)

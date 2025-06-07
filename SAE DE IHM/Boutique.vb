@@ -9,7 +9,7 @@ Public Class Boutique
     Private Sub Boutique_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RemplirComboBox(ComboBox1)
         joueursList = Recup
-        Me.BackgroundImage = Image.FromFile("Resources/images/TestShop.png")
+        Me.BackgroundImage = Image.FromFile("images/TestShop.png")
         Me.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
 
@@ -47,14 +47,8 @@ Public Class Boutique
         Me.Close()
     End Sub
 
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
     Private Sub MajBoutique(nomL As Label, Joueur As StatJoueur)
         nomL.Text = Joueur.Tout.Monnaie.ToString()
     End Sub
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
 End Class
