@@ -91,5 +91,7 @@ Public Class frmScores
         frmAccueil.Show()
         Me.Close()
     End Sub
-
+    Private Sub frmScores_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        VerifierFermeture(e)
+    End Sub
 End Class

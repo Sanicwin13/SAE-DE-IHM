@@ -32,8 +32,12 @@ Partial Class Boutique
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -93,9 +97,9 @@ Partial Class Boutique
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label5.Location = New System.Drawing.Point(61, 98)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(77, 13)
+        Me.Label5.Size = New System.Drawing.Size(89, 13)
         Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Hard mode = 1"
+        Me.Label5.Text = "Hard mode = 500"
         '
         'ComboBox1
         '
@@ -121,7 +125,7 @@ Partial Class Boutique
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Enabled = False
         Me.PictureBox1.Image = Global.SAE_DE_IHM.My.Resources.Resources.Berry
-        Me.PictureBox1.Location = New System.Drawing.Point(141, 87)
+        Me.PictureBox1.Location = New System.Drawing.Point(167, 87)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(44, 24)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -141,11 +145,46 @@ Partial Class Boutique
         Me.PictureBox2.TabStop = False
         Me.PictureBox2.Visible = False
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(55, 279)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(156, 110)
+        Me.Button4.TabIndex = 13
+        Me.Button4.Text = "Pack de skin Isaac"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.Enabled = False
+        Me.PictureBox3.Image = Global.SAE_DE_IHM.My.Resources.Resources.Berry
+        Me.PictureBox3.Location = New System.Drawing.Point(167, 252)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(44, 24)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 16
+        Me.PictureBox3.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label4.Location = New System.Drawing.Point(61, 263)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(105, 13)
+        Me.Label4.TabIndex = 15
+        Me.Label4.Text = "Thème Isaac = 1000"
+        '
         'Boutique
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label6)
@@ -160,6 +199,7 @@ Partial Class Boutique
         Me.Text = "Boutique"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -175,4 +215,7 @@ Partial Class Boutique
     Friend WithEvents Label6 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Button4 As Button
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Label4 As Label
 End Class

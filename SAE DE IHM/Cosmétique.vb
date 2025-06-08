@@ -1,3 +1,0 @@
-﻿Module Cosmétique
-
-End Module

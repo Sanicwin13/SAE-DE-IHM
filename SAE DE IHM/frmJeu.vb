@@ -52,13 +52,22 @@ Public Class frmJeu
         timer.Start()
         lblNom.Text = frmAccueil.ComboBox1.Text
         ' Initialiser les faces
-        faces = New List(Of String) From {
+        If ThemeIsaac = True Then
+            faces = New List(Of String) From {
+            "images/Isaac.jpg", "images/Isaac.jpg", "images/Isaac.jpg", "images/Isaac.jpg",
+            "images/Azazel.jpg", "images/Azazel.jpg", "images/Azazel.jpg", "images/Azazel.jpg",
+            "images/Bethany.jpg", "images/Bethany.jpg", "images/Bethany.jpg", "images/Bethany.jpg",
+            "images/Cain.jpg", "images/Cain.jpg", "images/Cain.jpg", "images/Cain.jpg",
+            "images/Lilith.jpg", "images/Lilith.jpg", "images/Lilith.jpg", "images/Lilith.jpg"
+            }
+        Else
+            faces = New List(Of String) From {
         "images/HassineMoungla.jpg", "images/HassineMoungla.jpg", "images/HassineMoungla.jpg", "images/HassineMoungla.jpg",
         "images/LaurentGiustignano.jpg", "images/LaurentGiustignano.jpg", "images/LaurentGiustignano.jpg", "images/LaurentGiustignano.jpg",
         "images/MariaPiaCantel.jpg", "images/MariaPiaCantel.jpg", "images/MariaPiaCantel.jpg", "images/MariaPiaCantel.jpg",
         "images/NinaFouilleul.jpg", "images/NinaFouilleul.jpg", "images/NinaFouilleul.jpg", "images/NinaFouilleul.jpg",
-        "images/Ziane.jpg", "images/Ziane.jpg", "images/Ziane.jpg", "images/Ziane.jpg"
-    }
+        "images/Ziane.jpg", "images/Ziane.jpg", "images/Ziane.jpg", "images/Ziane.jpg"}
+        End If
 
         ' Mélanger les faces
         Dim rnd As New Random()
@@ -85,7 +94,7 @@ Public Class frmJeu
             lblTemps.Text = "Fin"
             timer.Stop()
             clicsBloques = True
-            If ModeHard Then
+            If ModeHard = True Then
                 For i As Integer = 1 To 2
                     MAJStat(frmAccueil.ComboBox1.Text, carreTrv, 30 - secondeLeft, TempsDernCarreTrv)
                 Next
@@ -137,7 +146,9 @@ Public Class frmJeu
             cartesRetournees.Clear()
         End If
     End Sub
-
+    Private Sub frmJeu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        VerifierFermeture(e)
+    End Sub
 End Class
 
 

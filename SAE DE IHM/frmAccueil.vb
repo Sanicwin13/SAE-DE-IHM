@@ -5,7 +5,7 @@ Public Class frmAccueil
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnQuitter.Click
 
         If MsgBox("Veux tu quitter ? ", vbYesNo) = vbYes Then
-
+            JoueurStat.SauvegarderScores()
             Me.Close()
         End If
     End Sub
@@ -18,8 +18,7 @@ Public Class frmAccueil
             Dim joueur As String = ComboBox1.Text
             Dim stats As StatJoueur = joueursList.Find(Function(j) j.Tout.NomJ.Equals(joueur, StringComparison.OrdinalIgnoreCase))
             If stats.Tout.Hard = False Then
-                frmJeu.Show()
-                Me.Hide()
+                VerifTheme(Me)
             Else
                 ChoixDiffi.Show()
                 Me.Hide()
@@ -38,12 +37,15 @@ Public Class frmAccueil
     End Sub
     Private Sub frmAccueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ActualiserComboBox()
-        Me.BackgroundImage = Image.FromFile("images/Poop-emoji-scaled.jpg")
+        JoueurStat.ChargerScores()
+        Me.BackgroundImage = Image.FromFile("images/MemoryLobby.jpg")
         Me.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
 
     Public Sub ActualiserComboBox()
         RemplirComboBox(ComboBox1)
     End Sub
-
+    Private Sub ChoixDiffi_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        JoueurStat.SauvegarderScores()
+    End Sub
 End Class

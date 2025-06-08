@@ -31,7 +31,7 @@ Public Class Boutique
             joueursList = JoueurStat.Recup.ToList()
             Dim joueur As StatJoueur = joueursList.Find(Function(j) j.Tout.NomJ.Equals(joueurSelectionne, StringComparison.OrdinalIgnoreCase))
             If joueur.Tout.Hard = False Then
-                JoueurStat.MAJMonnaie(joueurSelectionne, 1)
+                JoueurStat.MAJMonnaie(joueurSelectionne, 500)
                 MajHard(joueur.Tout.NomJ)
                 MajBoutique(Label2, joueur)
             Else
@@ -51,4 +51,22 @@ Public Class Boutique
         nomL.Text = Joueur.Tout.Monnaie.ToString()
     End Sub
 
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        If joueurSelectionne IsNot Nothing Then
+            joueursList = JoueurStat.Recup.ToList()
+            Dim joueur As StatJoueur = joueursList.Find(Function(j) j.Tout.NomJ.Equals(joueurSelectionne, StringComparison.OrdinalIgnoreCase))
+            If joueur.Tout.theme = False Then
+                JoueurStat.MAJMonnaie(joueurSelectionne, 1000)
+                MajThemeIsaac(joueur.Tout.NomJ)
+                MajBoutique(Label2, joueur)
+            Else
+                MsgBox("Vous possédez déjà le thème Isaac")
+            End If
+        Else
+            MsgBox("Aucun joueur sélectionné")
+        End If
+    End Sub
+    Private Sub Boutique_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        VerifierFermeture(e)
+    End Sub
 End Class

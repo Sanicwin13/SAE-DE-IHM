@@ -22,32 +22,22 @@ Partial Class frmAccueil
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnJouer = New System.Windows.Forms.Button()
-        Me.btnOptions = New System.Windows.Forms.Button()
         Me.btnScores = New System.Windows.Forms.Button()
         Me.btnQuitter = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(160, 57)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(110, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "a concentration game"
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(29, 19)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(64, 20)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(170, 38)
         Me.Label2.TabIndex = 1
@@ -56,7 +46,9 @@ Partial Class frmAccueil
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label3.Location = New System.Drawing.Point(14, 111)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(93, 13)
@@ -71,15 +63,6 @@ Partial Class frmAccueil
         Me.btnJouer.TabIndex = 4
         Me.btnJouer.Text = "Jouer"
         Me.btnJouer.UseVisualStyleBackColor = True
-        '
-        'btnOptions
-        '
-        Me.btnOptions.Location = New System.Drawing.Point(123, 184)
-        Me.btnOptions.Name = "btnOptions"
-        Me.btnOptions.Size = New System.Drawing.Size(75, 23)
-        Me.btnOptions.TabIndex = 5
-        Me.btnOptions.Text = "Options"
-        Me.btnOptions.UseVisualStyleBackColor = True
         '
         'btnScores
         '
@@ -101,11 +84,11 @@ Partial Class frmAccueil
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 184)
+        Me.Button1.Location = New System.Drawing.Point(123, 184)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(95, 23)
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Boutique (beta)"
+        Me.Button1.Text = "Boutique"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'ComboBox1
@@ -125,23 +108,18 @@ Partial Class frmAccueil
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnQuitter)
         Me.Controls.Add(Me.btnScores)
-        Me.Controls.Add(Me.btnOptions)
         Me.Controls.Add(Me.btnJouer)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
         Me.Name = "frmAccueil"
         Me.Text = "Form2"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents btnJouer As Button
-    Friend WithEvents btnOptions As Button
     Friend WithEvents btnScores As Button
     Friend WithEvents btnQuitter As Button
     Friend WithEvents Button1 As Button
