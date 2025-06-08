@@ -31,9 +31,13 @@ Public Class Boutique
             joueursList = JoueurStat.Recup.ToList()
             Dim joueur As StatJoueur = joueursList.Find(Function(j) j.Tout.NomJ.Equals(joueurSelectionne, StringComparison.OrdinalIgnoreCase))
             If joueur.Tout.Hard = False Then
-                JoueurStat.MAJMonnaie(joueurSelectionne, 500)
-                MajHard(joueur.Tout.NomJ)
-                MajBoutique(Label2, joueur)
+                If joueur.Tout.Monnaie < 1000 Then
+                    JoueurStat.MAJMonnaie(joueurSelectionne, 500)
+                Else
+                    JoueurStat.MAJMonnaie(joueurSelectionne, 500)
+                    MajHard(joueur.Tout.NomJ)
+                    MajBoutique(Label2, joueur)
+                End If
             Else
                 MsgBox("Vous possédez déjà le mode hard")
             End If
@@ -56,9 +60,13 @@ Public Class Boutique
             joueursList = JoueurStat.Recup.ToList()
             Dim joueur As StatJoueur = joueursList.Find(Function(j) j.Tout.NomJ.Equals(joueurSelectionne, StringComparison.OrdinalIgnoreCase))
             If joueur.Tout.theme = False Then
-                JoueurStat.MAJMonnaie(joueurSelectionne, 1000)
-                MajThemeIsaac(joueur.Tout.NomJ)
-                MajBoutique(Label2, joueur)
+                If joueur.Tout.Monnaie < 1000 Then
+                    JoueurStat.MAJMonnaie(joueurSelectionne, 1000)
+                Else
+                    JoueurStat.MAJMonnaie(joueurSelectionne, 1000)
+                    MajThemeIsaac(joueur.Tout.NomJ)
+                    MajBoutique(Label2, joueur)
+                End If
             Else
                 MsgBox("Vous possédez déjà le thème Isaac")
             End If

@@ -1,3 +1,5 @@
-EEE;5;33;5;116;634;True;True
+EEE;5;33;7;176;634;True;True
 EEEE;5;23;5;67;478;False;False
-EEEEE;5;48;1;48;174;False;False
+EEEEE;5;48;1;48;174;False;True
+Joueur1;5;40;2;80;380;False;False
+Joueur2;5;56;1;56;158;True;True

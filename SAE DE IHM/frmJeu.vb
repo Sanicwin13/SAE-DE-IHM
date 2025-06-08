@@ -107,7 +107,7 @@ Public Class frmJeu
             Dim message As String = "Nom : " & nomJoueur & vbCrLf &
                             "Carrés trouvés (max) : " & carreTrv & vbCrLf &
                             "Temps total de jeu : " & TempsDernCarreTrv & " secondes"
-            If MsgBox(message) = MsgBoxResult.Yes Then
+            If MsgBox(message) = MsgBoxResult.Ok Then
                 frmAccueil.ActualiserComboBox()
                 frmAccueil.Show()
                 Me.Close()
